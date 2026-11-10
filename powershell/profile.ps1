@@ -1,6 +1,9 @@
 # Initialize starship
 Invoke-Expression (&starship init powershell)
 
+# Disable .NET CLI telemetry
+$ENV:DOTNET_CLI_TELEMETRY_OPTOUT = '1'
+
 # dotnet native argument tab completion
 Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
 	param($wordToComplete, $commandAst, $cursorPosition)
